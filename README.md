@@ -8,6 +8,14 @@ This Falsk APP is used scraping the Company data from Linkedin.
 # Installation
 pip install -r requirements.txt
 
+# Steps to Run
+- Clone the project using the gitlink
+- Install the required packages mention in requirements.txt
+- Open the project using the IDE (vscode/pycharm)
+- Open terminal & redirect the project path
+- Run the project by typing : python server3.py
+- Open the browser & redirect to url (http://localhost:5000/)
+
 # Take the tour
 
 - To use this app we need csv file with company name.
@@ -374,6 +382,22 @@ response = requests.request("GET", url, headers=headers, data=payload)
 print(response.text)
 
 
+
+# Async API call :
+
+import requests
+
+url = "http://localhost:5000/fetchcompanydetails"
+
+payload={}
+headers = {
+  'Cookie': 'session=eyJ1cGxvYWRlZF9kYXRhX2ZpbGVfcGF0aCI6InN0YXRpY1xcdXBsb2Fkc1xccmF3X2JpZ2dlc3RfY29tcGFuaWVzLmNzdiJ9.ZJ5xRA.ynDC9d4-YK2lQzsYm81n_0oHo_M'
+}
+
+response = requests.request("GET", url, headers=headers, data=payload)
+
+print(response.text)
+
 > Responses : 
 {
     "status": "Failed to get successful response from website. Please retry the request."
@@ -385,12 +409,14 @@ print(response.text)
     "msg": "Scraping Error"
 }
 
+
 {
     "companydetails": "{\"status\":\"Failed to get successful response from website. Please retry the request.\"}",
 
 }
 
 SCRAPEOPS_API_KEY = 'Your Account API Key'
+url = "https://scrapeops.io/app/dashboard"
 
 {
     "companydetails": "{\"Error\":\"The API key you sent with the request is invalid. Please include a valid API key.\"}",
