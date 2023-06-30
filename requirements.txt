@@ -1,0 +1,5 @@
+flask
+pandas
+werkzeug
+aiohttp
+scrapeops-scrapy-proxy-sdk
